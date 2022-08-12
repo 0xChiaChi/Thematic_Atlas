@@ -1,3 +1,3 @@
-# Visual cryptography editor
+# Thematic_Atlas
 
-[Service website](https://0xchiachi.github.io/visual-cryptography-editor/)
+[Service website](https://0xchiachi.github.io/Thematic_Atlas/)
