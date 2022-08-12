@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit test</title>
+  <link rel="icon" href="img/LOGO.jpg" />
+</head>
+
+<body>
+  <button onclick="main()">run</button>
+  <p id="status">OpenCV.js is loading...</p>
+  [source] <input type="file" id="fileInput" name="file" />
+  <table>
+    <tr>
+      <td>
+        <h2>Source image</h2>
+        <img id="imageSrc" alt="No Image" style="width: 300px;" src="img/gura.png" />
+      </td>
+      <td>
+        <h2>Black-White image</h2>
+        <canvas id="BlackWhiteLayer"></canvas>
+      </td>
+      <td>
+        <h2>L1 (Source && Noise)</h2>
+        <canvas id="dst1Layer"></canvas>
+      </td>
+      <td>
+        <h2>L2 (!Source && !Noise)</h2>
+        <canvas id="dst2Layer"></canvas>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2>Share1 (Noise)</h2>
+        <canvas id="Share1Layer"></canvas>
+      </td>
+      <td>
+        <h2>Share2 (L1 || L2)</h2>
+        <canvas id="Share2Layer"></canvas>
+      </td>
+      <td>
+        <h2>verific</h2>
+        <canvas id="verificLayer"></canvas>
+      </td>
+    </tr>
+  </table>
+  <a href="index.html">back</a>
+  <script type="text/javascript">
+    function onOpenCvReady() {
+      document.getElementById("status").innerHTML = "OpenCV.js is ready.";
+    }
+  </script>
+  <script async src="js/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+  <script src="js/vc-grid.js"></script>
+</body>
+
+</html>
