@@ -86,8 +86,10 @@ tooltip.onchange= function (event){
     color_pen=event.target.value;
     board.strokeStyle=color_pen;
  }
-
-board.lineWidth = 3;
+ pansize.onchange= function (event){
+    pansize=event.target.value;
+    board.lineWidth=pansize;
+ }
 board.lineJoin = "round";
 canvas.onmousedown = beginDraw;
 canvas.onmousemove = drawing;
