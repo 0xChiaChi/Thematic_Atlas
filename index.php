@@ -1,6 +1,3 @@
-<?php 
-
- ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -117,8 +114,8 @@
 				<input s type="range" min="1" max="12" value="6" id='pan_size'>					
 			</div>
 		</div>
-	</footer>	
-<?php include("config.php"); ?>
+	</footer>
+	<?php include("config.php"); ?>	
 </body>
 <script>
 	$("#menu-toggle").click(function (e) {

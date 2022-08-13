@@ -13,3 +13,4 @@
 	   return $link;
 	}
 	?>
+<?php include("config.php"); ?>
