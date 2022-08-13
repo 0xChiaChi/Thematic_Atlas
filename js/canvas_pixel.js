@@ -1,6 +1,8 @@
 
 var canvas,board,color_pen;
 canvas = document.getElementById('imageSrc');
+Bounding = document.querySelector("#imageSrc").getBoundingClientRect();
+Bounding.top
 canvas.width=canvas.clientWidth
 canvas.height=canvas.clientHeight
 board = canvas.getContext('2d');
@@ -34,8 +36,13 @@ function endDraw(event){
 function pos(event){
     var x,y;
     if(isTouch(event)){
-        x = event.touches[0].pageX-event.target.offsetLeft;
-        y = event.touches[0].pageY-event.target.offsetTop;
+        console.log(event.touches[0]);
+        console.log(event.touches[0].pageX);
+        console.log(event.touches[0].pageY);
+        console.log(Bounding.left);
+        console.log(Bounding.top);
+        x = event.touches[0].pageX-Bounding.left;
+        y = event.touches[0].pageY-Bounding.top;
     }else{
         x = event.offsetX;
         y = event.offsetY;
