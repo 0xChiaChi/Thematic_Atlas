@@ -118,8 +118,8 @@
 			</div>
 		</div>
 	</footer>	
-</body>
 <?php include("config.php"); ?>
+</body>
 <script>
 	$("#menu-toggle").click(function (e) {
 		e.preventDefault();
