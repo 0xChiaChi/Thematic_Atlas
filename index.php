@@ -1,3 +1,6 @@
+<?php 
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -115,6 +118,7 @@
 			</div>
 		</div>
 	</footer>
+<?php include("config.php"); ?>	
 </body>
 <script>
 	$("#menu-toggle").click(function (e) {
@@ -128,7 +132,5 @@
 	var pansize=document.getElementById('pan_size');
 </script>
 <script type="text/javascript" src="js/canvas_pixel.js"></script>
-
 <script type="text/javascript" src="js/downloadbutton.js"></script>
-
 </html>
