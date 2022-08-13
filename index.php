@@ -100,7 +100,7 @@
 				<div class="row justify-content-center align-items-center" style="width: 100%;height:100%;">
 					<div class="tab-pane fade show active col" id="nav-home" role="tabpanel" style="align-items: center;display: flex;width: 100%;height:100%;"aria-labelledby="nav-home-tab"><canvas id="imageSrc" style="margin:auto;height: 256px;width: 256px;"></canvas>
 					</div>
-					<div class="col" id="nav-home_2" role="tabpanel" style="width: 100%;height:100%;display: flex;align-items: center;"aria-labelledby="nav-home-tab_2">	<img id="real_img_1" style="margin:auto;height: 256px;width: 256px;" src="./img/gura.png">
+					<div class="col" id="nav-home_2" role="tabpanel" style="width: 100%;height:100%;display: flex;align-items: center;"aria-labelledby="nav-home-tab_2"><img id="real_img_1" style="margin:auto;height: 256px;width: 256px;" src="./img/gura.png">
 					</div>
 				</div>
 			</div>
@@ -110,8 +110,8 @@
 		<!-- <div style="position: fixed;"> -->
 		<div style="display: flex;">
 			<div style="margin:auto;">
-					<span>筆劃調整</span>
-					<input s type="range" min="1" max="10" value="5" id='pan_size'>					
+				<span>筆劃調整</span>
+				<input s type="range" min="1" max="12" value="6" id='pan_size'>					
 			</div>
 		</div>
 	</footer>
