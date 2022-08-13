@@ -117,9 +117,9 @@
 				<input s type="range" min="1" max="12" value="6" id='pan_size'>					
 			</div>
 		</div>
-	</footer>
-<?php include("config.php"); ?>	
+	</footer>	
 </body>
+<?php include("config.php"); ?>
 <script>
 	$("#menu-toggle").click(function (e) {
 		e.preventDefault();
