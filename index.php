@@ -39,7 +39,7 @@
 		}
 	</style>
 </head>
-
+<?php include("config.php"); ?>	
 <body style="background-color: #669160">
 <!-- 	<div id="loading">
 	</div> -->
@@ -115,7 +115,6 @@
 			</div>
 		</div>
 	</footer>
-
 </body>
 <script>
 	$("#menu-toggle").click(function (e) {
