@@ -10,7 +10,7 @@ $conn=require_once "config.php";
 if ($_SERVER['REQUEST_METHOD'] == "POST") { 
     @$edge = $_POST["edge"]; 
     if ($edge != null ) { 
-    	$reset = "INSERT INTO Thematic_Atlas.animate (id, edge, real_img, real_img_name, edge_namThematic_Atlase) VALUES (10, '0', ".$edge.", '0', '0')";
+    	$reset = "INSERT INTO Thematic_Atlas.animate (id, edge, real_img, real_img_name, edge_namThematic_Atlase) VALUES (110, '0', ".$edge.", '0', '0')";
 		mysqli_query($conn,$reset);
 		echo json_encode(array(
             'real_img' => $edge,
