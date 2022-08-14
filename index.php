@@ -69,12 +69,10 @@
 						</label>
 					</li>
 					<li>
-						<label class="my-3"><input type="button" class="sr-only" id='button1'><i class="fas fa-sync fa-lg"></i><span
-								style="margin-left:10px;">清空畫布</span></label>
+						<label class="my-3"><input type="button" class="sr-only" id='button1'><i class="fas fa-sync fa-lg"></i><span style="margin-left:10px;">清空畫布</span></label>
 					</li>
 					<li>
-						<label class="my-3"><input type="button" class="sr-only" id='button2'><i class="fas fa-hand-holding-heart fa-lg"></i><span
-								style="margin-left:10px;">圖片提交</span></label>
+						<label class="my-3"><input type="button" class="sr-only" id='button2'><i class="fas fa-hand-holding-heart fa-lg"></i><span style="margin-left:10px;">圖片提交</span></label>
 					</li>
 					<li>
 						<label class="my-3"> <input type="button" class="sr-only" id='downloadbutton'> <i class="fas fa-download fa-lg"></i><span
@@ -82,7 +80,7 @@
 						</label>
 					</li>
 					<li>
-						<label class="my-3"> <input type="button" class="sr-only" id='downloadbutton'><i class="fab fa-accessible-icon fa-lg"></i><span
+						<label class="my-3"> <input type="button" class="sr-only" id='button3'><i class="fab fa-accessible-icon fa-lg"></i><span
 							style="margin-left:10px;" >換張圖片</span> 
 						</label>
 					</li>
@@ -101,24 +99,25 @@
 				<div class="row justify-content-center align-items-center" style="width: 100%;height:100%;">
 					<div class="tab-pane fade show active col" id="nav-home" role="tabpanel" style="align-items: center;display: flex;width: 100%;height:100%;"aria-labelledby="nav-home-tab"><canvas id="imageSrc" style="margin:auto;height: 256px;width: 256px;"></canvas>
 					</div>
-					<div class="col" id="nav-home_2" role="tabpanel" style="width: 100%;height:100%;display: flex;align-items: center;"aria-labelledby="nav-home-tab_2"><img id="real_img_1" style="margin:auto;height: 256px;width: 256px;" src="./img/gura.png">
+					<div class="col" id="nav-home_2" role="tabpanel" style="width: 100%;height:100%;display: flex;align-items: center;"aria-labelledby="nav-home-tab_2"><img id="real_img_1" style="margin:auto;height: 256px;width: 256px;">
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<input type="file" id="test"style="width: 100%;height: 5vh;">
+	<input type="file"multiple="multiple" id="test"style="width: 100%;height: 5vh;">
 	<canvas id="viewport"></canvas>
 	<footer style="width:100%;position: fixed;bottom: 0;">
 		<!-- <div style="position: fixed;"> -->
 		<div style="display: flex;">
 			<div style="margin:auto;">
 				<span>筆劃調整</span>
-				<input s type="range" min="1" max="12" value="6" id='pan_size'>					
+				<input type="range" min="1" max="10" value="1" id='pan_size'>					
 			</div>
 		</div>
 	</footer>
 </body>
+<script type="text/javascript" src="js/downloadbutton.js"></script>
 <script>
 	$("#menu-toggle").click(function (e) {
 		e.preventDefault();
@@ -130,27 +129,60 @@
 	var clear=document.getElementById('button1');
 	var pansize=document.getElementById('pan_size');
 	var test_file=document.getElementById('test');
-
-	test_file.addEventListener('change',function(){
-	function getBase64(file) {
-		var reader = new FileReader();
-		reader.readAsDataURL(file);
-		reader.onload = function () {
-		console.log(reader.result);
-		var image = new Image();
-		image.src = reader.result;
-		document.body.appendChild(image);
-		UploadPic(reader.result);
-		};
-	   	reader.onerror = function (error) {
-	    	console.log('Error: ', error);
-   		};
-	}
-	var file = document.querySelector('#test').files[0];
-	getBase64(file); // prints the base64 string
-	})
+	$("#button3").click(function(e){
+		window.location.reload();
+	});
+	// 自己寫API
+	// test_file.addEventListener('change',function(){
+// function getBase64(file,name) {
+// 		var reader = new FileReader();
+// 		reader.readAsDataURL(file);
+// 		reader.onload = function () {
+// 		UploadPic(reader.result,name);
+// 		};
+// 	   	reader.onerror = function (error) {
+// 	    	console.log('Error: ', error);
+//    		};
+// 	}
+// 	var file = document.querySelector('#test').files;
+// 	var length=document.querySelector('#test').files.length;
+// 	for (var i = 0; i < length; i++) {
+// 		let name=file[i].name;
+// 		getBase64(file[i],name);
+// 	}
+// })
+function make_img(){
+	php_base64="<?php echo $_SESSION['real_img'];?>";
+	let real=document.getElementById("real_img_1");
+	real.src=php_base64;
+	// console.log(php_base64);
+};
+make_img();
+var submit_=document.getElementById('button2');
+// $("#button2").click(function(e){
+// 	console.log(123);
+// 	if(checkEmpty()){
+// 		console.log(1);
+// 		alert("圖不能為空");
+// 		return;
+// 	}else{
+// 		console.log(2);
+// 		UploadPic();
+// 	};
+// });
 </script>
-<script type="text/javascript" src="js/canvas_pixel.js">// $("button2").addEventListener('click',function(){UploadPic();});</script>
-<script type="text/javascript" src="js/downloadbutton.js"></script>
+<script type="text/javascript" src="js/canvas_pixel.js">
+// $("#button2").click(function(e){
+// 	console.log(123);
+// 	if(checkEmpty()){
+// 		console.log(1);
+// 		alert("圖不能為空");
+// 		return;
+// 	}else{
+// 		console.log(2);
+// 		UploadPic();
+// 	};
+// });
+</script>
 
 </html>

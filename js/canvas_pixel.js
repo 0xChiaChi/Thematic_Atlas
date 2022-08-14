@@ -71,10 +71,10 @@ function convertCanvasToImage() {
 }
 
 //生成圖片並上傳到服務器
-function UploadPic(code) {       
-    // var Pic = canvas.toDataURL("image/png");
-    // Pic = Pic.replace(/^data:image\/(png|jpg);base64,/, "")
-    var Pic = code;
+function UploadPic() {       
+    var Pic = canvas.toDataURL("image/png");
+    Pic = Pic.replace(/^data:image\/(png|jpg);base64,/, "")
+    // var Pic = code;
     $.ajax({
         method: 'POST',
         url: 'to_base64.php',
@@ -105,3 +105,14 @@ canvas.onmouseup = endDraw;
 canvas.addEventListener('touchstart',beginDraw,false);
 canvas.addEventListener('touchmove',drawing,false);
 canvas.addEventListener('touchend',endDraw,false);
+submit_.addEventListener('click',function(){
+    console.log(123);
+    if(checkEmpty()){
+        console.log(1);
+        alert("圖不能為空");
+        return;
+    }else{
+        console.log(2);
+        UploadPic();
+    };
+});
