@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             echo json_encode(array(
             'GOOD' => '上傳成功!'
         	));
-
         }else{
             echo json_encode(array(
             'ERROR' => '上傳失敗!',

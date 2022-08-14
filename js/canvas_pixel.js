@@ -82,8 +82,8 @@ function UploadPic() {
 
         success: function (msg) {
             console.log("圖片上傳成功");
-            // console.log(msg);
-            alert("上傳成功 請等個3秒確保成功送出");
+            alert(msg.GOOD);
+            console.log(msg);
         },
         error: function(msg) {
             alert("需要服務器資源");
