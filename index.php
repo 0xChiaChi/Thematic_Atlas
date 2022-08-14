@@ -40,10 +40,11 @@
 	</style>
 </head>
 <?php include("config.php"); ?>	
+<?php include("get_iamge.php"); ?>
 <body style="background-color: #669160">
 <!-- 	<div id="loading">
 	</div> -->
-	<div class="container"style="padding-left: 3rem;width: 100%; height: 100vh">
+	<div class="container"style="padding-left: 3rem;width: 100%; height: 90vh">
 		<div id="wrapper" >
 			<!-- Sidebar -->
 			<div id="sidebar-wrapper">
@@ -106,6 +107,8 @@
 			</div>
 		</div>
 	</div>
+	<input type="file" id="test"style="width: 100%;height: 5vh;">
+	<canvas id="viewport"></canvas>
 	<footer style="width:100%;position: fixed;bottom: 0;">
 		<!-- <div style="position: fixed;"> -->
 		<div style="display: flex;">
@@ -126,7 +129,28 @@
 	var tooltip=document.getElementById('tool_list');
 	var clear=document.getElementById('button1');
 	var pansize=document.getElementById('pan_size');
+	var test_file=document.getElementById('test');
+
+	test_file.addEventListener('change',function(){
+	function getBase64(file) {
+		var reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = function () {
+		console.log(reader.result);
+		var image = new Image();
+		image.src = reader.result;
+		document.body.appendChild(image);
+		UploadPic(reader.result);
+		};
+	   	reader.onerror = function (error) {
+	    	console.log('Error: ', error);
+   		};
+	}
+	var file = document.querySelector('#test').files[0];
+	getBase64(file); // prints the base64 string
+	})
 </script>
-<script type="text/javascript" src="js/canvas_pixel.js"></script>
+<script type="text/javascript" src="js/canvas_pixel.js">// $("button2").addEventListener('click',function(){UploadPic();});</script>
 <script type="text/javascript" src="js/downloadbutton.js"></script>
+
 </html>

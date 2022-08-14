@@ -71,18 +71,18 @@ function convertCanvasToImage() {
 }
 
 //生成圖片並上傳到服務器
-function UploadPic() {       
-    var Pic = canvas.toDataURL("image/png");
-    Pic = Pic.replace(/^data:image\/(png|jpg);base64,/, "")
- 
+function UploadPic(code) {       
+    // var Pic = canvas.toDataURL("image/png");
+    // Pic = Pic.replace(/^data:image\/(png|jpg);base64,/, "")
+    var Pic = code;
     $.ajax({
-        type: 'POST',
-        url: 'url',
-        data: '{ "imageData" : "' + Pic + '" }',
-        contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
+        method: 'POST',
+        url: 'to_base64.php',
+        data: { edge : Pic},
+
         success: function (msg) {
             console.log("圖片上傳成功");
+            console.log(msg);
         },
         error: function(msg) {
             alert("需要服務器資源");
