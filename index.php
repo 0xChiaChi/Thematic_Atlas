@@ -41,8 +41,6 @@
 <?php include("config.php"); ?>	
 <?php include("get_iamge.php"); ?>
 <body style="background-color: #669160">
-<!-- 	<div id="loading">
-	</div> -->
 	<div class="container"style="padding-left: 3rem;width: 100%; height: 90vh">
 		<div id="wrapper" >
 			<!-- Sidebar -->
@@ -104,10 +102,7 @@
 			</div>
 		</div>
 	</div>
-<!-- 	<input type="file"multiple="multiple" id="test"style="width: 100%;height: 5vh;">
-	<canvas id="viewport"></canvas> -->
 	<footer style="width:100%;position: fixed;bottom: 0;">
-		<!-- <div style="position: fixed;"> -->
 		<div style="display: flex;">
 			<div style="margin:auto;">
 				<span>筆劃調整</span>

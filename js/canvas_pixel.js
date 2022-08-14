@@ -84,7 +84,7 @@ function UploadPic() {
 
         success: function (msg) {
             console.log("圖片上傳成功");
-            alert(msg.GOOD);
+            confirm(msg.GOOD);
             console.log(msg);
         },
         error: function(msg) {
