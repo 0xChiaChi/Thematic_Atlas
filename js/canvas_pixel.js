@@ -86,6 +86,7 @@ function UploadPic(code) {
         },
         error: function(msg) {
             alert("需要服務器資源");
+            console.log(msg);
         }
     });
 }        
