@@ -105,8 +105,8 @@
 			</div>
 		</div>
 	</div>
-	<input type="file"multiple="multiple" id="test"style="width: 100%;height: 5vh;">
-	<canvas id="viewport"></canvas>
+<!-- 	<input type="file"multiple="multiple" id="test"style="width: 100%;height: 5vh;">
+	<canvas id="viewport"></canvas> -->
 	<footer style="width:100%;position: fixed;bottom: 0;">
 		<!-- <div style="position: fixed;"> -->
 		<div style="display: flex;">
