@@ -2,7 +2,7 @@
 var downloadbutton = document.getElementById("downloadbutton");
 
 downloadbutton.addEventListener("click", function(){
-    if(checkEmpty(1)!=true){
+    if(checkEmpty()!=true){
     var canvas = document.getElementById('imageSrc');
     var anchor = document.createElement('a');
     anchor.href = canvas.toDataURL("image/png");

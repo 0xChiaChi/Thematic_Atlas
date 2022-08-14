@@ -9,7 +9,6 @@
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/fontawesome.js"></script>
-	<script type="text/javascript" src="js/interact.min.js"></script>
 	<style type="text/css">
 		.nav-link.active  {
 			color: #FFFFFF !important;

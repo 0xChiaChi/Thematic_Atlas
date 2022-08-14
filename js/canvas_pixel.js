@@ -6,6 +6,8 @@ Bounding.top
 canvas.width=canvas.clientWidth
 canvas.height=canvas.clientHeight
 board = canvas.getContext('2d');
+board.fillStyle = 'rgba(255, 255, 255, 1)';
+board.fillRect(0, 0, canvas.width, canvas.height);
 
 var mousePress = false;
 var last = null;
