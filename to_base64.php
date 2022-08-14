@@ -10,8 +10,12 @@ $conn=require_once "config.php";
 if ($_SERVER['REQUEST_METHOD'] == "POST") { 
     @$edge = $_POST["edge"]; 
     if ($edge != null ) { 
-    	$reset = "INSERT INTO `animate` (`id`, `edge`, `real_img`, `real_img_name`, `edge_name`) VALUES (110, '0', ".$edge.", '0', '0')";
-		mysqli_query($conn,$reset);
+    	$reset = "INSERT INTO animate (id, edge, real_img, real_img_name, edge_name) VALUES (110, '0', ".$edge.", '0', '0')";
+    	if(mysqli_query($conn, $reset)){
+                echo "註冊成功!3秒後將自動跳轉頁面<br>";
+            }else{
+                echo "Error creating table: " . mysqli_error($conn);
+            }
 		echo json_encode(array(
             'real_img' => $edge,
         ));
