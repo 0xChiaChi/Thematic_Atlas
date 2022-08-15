@@ -69,7 +69,7 @@
 						<label class="my-3"><input type="button" class="sr-only" id='button1'><i class="fas fa-sync fa-lg"></i><span style="margin-left:10px;">清空畫布</span></label>
 					</li>
 					<li>
-						<label class="my-3"><input type="button" class="sr-only" id='button2'><i class="fas fa-hand-holding-heart fa-lg"></i><span style="margin-left:10px;">圖片提交</span></label>
+						<label class="my-3"><input type="button" data-toggle="modal" data-target="#modle_open" class="sr-only" id='button2'><i class="fas fa-hand-holding-heart fa-lg"></i><span style="margin-left:10px;">圖片提交</span></label>
 					</li>
 					<li>
 						<label class="my-3"> <input type="button" class="sr-only" id='downloadbutton'> <i class="fas fa-download fa-lg"></i><span
@@ -84,6 +84,26 @@
 				</ul>
 			</div>
 		</div>
+		<div class="modal fade" id="modle_open" tabindex="-1" aria-labelledby="modle_connect" aria-hidden="true">
+		   <div class="modal-dialog">
+		     <div class="modal-content">
+		       <div class="modal-header">
+		         <h5 class="modal-title" id="modle_connect">傳送狀態</h5>
+		          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			         <span aria-hidden="true">&times;</span>
+			       </button>
+		       </div>
+		       <div class="modal-body">
+		       		<div>
+		            	<span>正在上傳...請勿關閉此畫面...</span>	       			
+		       		</div>
+		       </div>
+		       <div class="modal-footer">
+		         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		       </div>
+		     </div>
+		   </div>
+		 </div>
 		<nav class="pt-5">
 			<div class="nav nav-tabs" id="nav-tab" role="tablist">
 				<a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
@@ -153,6 +173,7 @@ function make_img(){
 };
 make_img();
 var submit_=document.getElementById('button2');
+var modalToggle = document.getElementById('modle_open') // relatedTarget
 // $("#button2").click(function(e){
 // 	console.log(123);
 // 	if(checkEmpty()){

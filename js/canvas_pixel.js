@@ -83,12 +83,12 @@ function UploadPic() {
         data: { edge : Pic},
 
         success: function (msg) {
-            console.log("圖片上傳成功");
-            confirm(msg.GOOD);
-            console.log(msg);
+            // console.log(msg);
+            $(".modal-body div span").html(msg.GOOD);
+            // console.log($(".modal-body div span"));
         },
         error: function(msg) {
-            alert("需要服務器資源");
+            $(".modal-body div span").html(msg);
             console.log(msg);
         }
     });
@@ -109,13 +109,14 @@ canvas.addEventListener('touchstart',beginDraw,false);
 canvas.addEventListener('touchmove',drawing,false);
 canvas.addEventListener('touchend',endDraw,false);
 submit_.addEventListener('click',function(){
+    $(".modal-body div span").html("正在上傳...請勿關閉此畫面..");
     console.log(123);
     if(checkEmpty()){
-        console.log(1);
-        alert("圖不能為空");
+        // console.log(1);
+        $(".modal-body div span").html("圖不能為空");
         return;
     }else{
-        console.log(2);
+        // console.log(2);
         UploadPic();
     };
 });
