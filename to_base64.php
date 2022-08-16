@@ -4,6 +4,7 @@ require_once "config.php";
 session_start();
 
 $t=time();
+date_default_timezone_set("Asia/Taipei");
 if ($_SERVER['REQUEST_METHOD'] == "POST") { 
     $edge = $_POST["edge"];
     if ($edge != null ) { 
